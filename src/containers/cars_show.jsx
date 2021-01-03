@@ -7,7 +7,7 @@ import Aside from '../components/aside';
 
 class CarsShow extends Component {
   handleClick = () => {
-    this.props.removeCar(this.props.history, this.props.car);
+    this.props.deleteCar(this.props.history, this.props.car);
   }
 
   render () {

@@ -37,12 +37,13 @@ export function createCar(garage, body, callback) {
   };
 }
 
-export function deleteCar(id) {
-  const request = fetch(`${ROOT_URL}/cars/${id}`, {
+export function deleteCar(history, car) {
+  fetch(`${ROOT_URL}/cars/${car.id}`, {
     method: 'DELETE'
-  }).then(res => res.json());
+  }).then(res => res.json())
+    .then(() => history.push(""));
   return {
     type: CAR_DELETE,
-    payload: request
+    payload: car
   };
 }
